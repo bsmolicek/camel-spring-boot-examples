@@ -17,6 +17,7 @@
 package sample.camel;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.cxf.common.DataFormat;
 import org.apache.camel.component.cxf.jaxws.CxfEndpoint;
 import org.apache.cxf.message.MessageContentsList;
 
@@ -49,7 +50,8 @@ public class MyWsdlRouteBuilder extends RouteBuilder {
 	CxfEndpoint customers() {
 		CxfEndpoint customersEndpoint = new CxfEndpoint();
 		customersEndpoint.setWsdlURL("wsdl/CustomerService.wsdl");
-		customersEndpoint.setServiceClass(CustomerService.class);
+		//customersEndpoint.setServiceClass(CustomerService.class);
+		customersEndpoint.setDataFormat(DataFormat.PAYLOAD);
 		customersEndpoint.setAddress("/customers");
 		customersEndpoint.setProperties(new HashMap<>());
 		// Request validation will be executed, in particular the name validation in getCustomersByName
