@@ -65,9 +65,10 @@
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-reactive-streams-starter</artifactId>
         </dependency>
+        <!-- to expose rest services -->
         <dependency>
             <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-servlet-starter</artifactId>
+            <artifactId>camel-platform-http-starter</artifactId>
         </dependency>
 
         <dependency>
